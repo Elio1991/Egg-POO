@@ -7,7 +7,7 @@ y luego informar mediante otro método el número de ISBN,
 el título, el autor del libro y el número de páginas.
 
  */
-package Entidades.Libreria;
+package Libreria;
 
 import Entidades.Libro1;
 
