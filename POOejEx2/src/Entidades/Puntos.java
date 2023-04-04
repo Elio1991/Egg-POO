@@ -14,7 +14,6 @@ package Entidades;
 import java.util.Scanner;
 
 /**
- *
  * @author Elio
  */
 public class Puntos {
