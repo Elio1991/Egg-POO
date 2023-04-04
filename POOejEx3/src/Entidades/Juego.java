@@ -50,7 +50,7 @@ public class Juego {
         Scanner leer = new Scanner(System.in);
         System.out.println("Adivinanza de números");
         System.out.println("#####################");
-        
+
         int cont1 = 0;
         int cont2 = 0;
         boolean continuar = true;
@@ -70,7 +70,7 @@ public class Juego {
                     cont--;
                     intentos--;
                     System.out.println("Inconrrecto. Te quedan: " + cont + " intentos! ");
-                    
+
                     System.out.println("Ingresa un número mas alto");
                     jugador2 = leer.nextInt();
                 }
@@ -78,23 +78,22 @@ public class Juego {
                     cont--;
                     intentos--;
                     System.out.println("Incorrecto. Te quedan: " + cont + " intentos!");
-                    
+
                     System.out.println("Ingresa un número mas bajo");
                     jugador2 = leer.nextInt();
                 }
-                if (jugador2 == jugador1){
+                if (jugador2 == jugador1) {
                     System.out.println("Correcto!! Adivinaste el número!!");
                     cont2++;
                     break;
                 }
-                
-               
+
             } while (cont > 1);
             intentos--;
-            if (intentos == 0 && jugador1 != jugador2){
-                    System.out.println("Lo siento, no adivinaste");
-                    cont1++;
-                }
+            if (intentos == 0 && jugador1 != jugador2) {
+                System.out.println("Lo siento, no adivinaste");
+                cont1++;
+            }
             System.out.println("Los Resultados hasta ahora son: ");
             System.out.println("Jugador 1 " + cont1 + " victorias");
             System.out.println("Jugador 2 " + cont2 + " victorias");
@@ -102,13 +101,13 @@ public class Juego {
             System.out.println("Desean seguir jugando? SI/NO");
             leer.nextLine();
             String resp = leer.nextLine();
-            if (resp.equalsIgnoreCase("Si")){
-             continuar = true;
-            }else if(resp.equalsIgnoreCase("NO")){
-             continuar = false; 
+            if (resp.equalsIgnoreCase("Si")) {
+                continuar = true;
+            } else if (resp.equalsIgnoreCase("NO")) {
+                continuar = false;
             }
         } while (continuar);
-       // System.out.println("Gracias por jugar!");
+        // System.out.println("Gracias por jugar!");
     }
 
 }
