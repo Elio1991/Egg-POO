@@ -22,9 +22,7 @@ public class Libro1 {
   private int NumPag;
     // Constructor vacio
 
-    /**
-     *
-     */
+    
     public Libro1() {
     }
     // Constructor con atributos pasados por parámetros
