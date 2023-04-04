@@ -41,9 +41,7 @@ public class Libro1 {
         this.NumPag = NumPag;
     }
     // Metodo(Comportamiento)
-    /**
-     *
-     */
+   
     public void cargarLibro(){
         Scanner leer = new Scanner(System.in);
          ISBN =(int)(Math.random()*9999);
