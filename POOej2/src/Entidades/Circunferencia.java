@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author Elio
  */
 public class Circunferencia {
-   public double Radio;
+    public double Radio;
 
     public Circunferencia() {
     }
