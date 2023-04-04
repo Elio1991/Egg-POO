@@ -54,7 +54,7 @@ public class Cancion {
     public void MostrarCancion(){
         System.out.println("El título de la canción es: ");
         System.out.println(Titulo);
-        System.out.println("#######################################");
+        System.out.println("######################################");
         System.out.println("El autor de la canción es: ");
         System.out.println(Autor);
     }
