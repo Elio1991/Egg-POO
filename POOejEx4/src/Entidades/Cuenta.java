@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @author Elio
  */
 public class Cuenta {
+
     String Titular;
     int Saldo;
 
@@ -39,42 +40,33 @@ public class Cuenta {
     public void setSaldo(int Saldo) {
         this.Saldo = Saldo;
     }
-    
-    public void Retirar_dinero(){
+
+    public void Retirar_dinero() {
         Scanner leer = new Scanner(System.in);
         int RetirarSaldo;
         System.out.println("Ingrese su nombre y apellido");
-            Titular = leer.nextLine();
-            System.out.println("#############################");
-            System.out.println("Bienvenido/a señor/a " + Titular);
-            
-            Saldo =(int) (Math.random()*100000);
-            System.out.println("Su saldo es : " + Saldo);
+        Titular = leer.nextLine();
+        System.out.println("#############################");
+        System.out.println("Bienvenido/a señor/a " + Titular);
+
+        Saldo = (int) (Math.random() * 100000);
+        System.out.println("Su saldo es : " + Saldo);
         do {
-            
+
             System.out.println("#############################");
             System.out.println("Cuanto desea retirar?");
             RetirarSaldo = leer.nextInt();
-            if(RetirarSaldo>Saldo){
-                System.out.println("Fondos Insuficientes, ingrese un importe menor");           
-            }else{
+            if (RetirarSaldo > Saldo) {
+                System.out.println("Fondos Insuficientes, ingrese un importe menor");
+            } else {
                 Saldo = Saldo - RetirarSaldo;
                 System.out.println("Retiro Exitoso. Su saldo restante es: " + Saldo);
                 System.out.println("Gracias por utilizar este cajero!");
                 break;
             }
-            
-        } while (RetirarSaldo>Saldo);
-        
-    
-    
+
+        } while (RetirarSaldo > Saldo);
+
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
