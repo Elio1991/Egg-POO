@@ -41,7 +41,6 @@ public class Libro1 {
         this.NumPag = NumPag;
     }
     // Metodo(Comportamiento)
-
     /**
      *
      */
