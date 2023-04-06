@@ -98,6 +98,7 @@ public class AppCuenta {
                     System.out.println("########################################");
                     break;
                 default:
+                    System.out.println("Ingrese una opción valida");
             }
         } while (menu != 0);
         System.out.println("Gracias por operar con *AppCuenta*");
