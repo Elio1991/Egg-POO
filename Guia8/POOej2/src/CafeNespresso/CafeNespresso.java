@@ -88,7 +88,7 @@ public class CafeNespresso {
                         System.out.println("Ingrese la cantidad de cafe en ml :");
 
                         int cafe = leer.nextInt();
-                        if (cs.agregarCafe(c1, cafe) == true) {
+                        if (cs.agregarCafe(c1, cafe)) {
                             System.out.println("Se agregó el café correctamente!");
                             System.out.println("################################");
                             bandera = true;
