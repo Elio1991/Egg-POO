@@ -22,12 +22,12 @@ package Entidades;
 public class CuentaBancaria {
     private int numeroCuenta;
     private long dni;
-    private double saldoActual;
+    private float saldoActual;
 
     public CuentaBancaria() {
     }
 
-    public CuentaBancaria(int numeroCuenta, long dni, double saldoActual) {
+    public CuentaBancaria(int numeroCuenta, long dni, float saldoActual) {
         this.numeroCuenta = numeroCuenta;
         this.dni = dni;
         this.saldoActual = saldoActual;
@@ -49,11 +49,11 @@ public class CuentaBancaria {
         this.dni = dni;
     }
 
-    public double getSaldoActual() {
+    public float getSaldoActual() {
         return saldoActual;
     }
 
-    public void setSaldoActual(double saldoActual) {
+    public void setSaldoActual(float saldoActual) {
         this.saldoActual = saldoActual;
     }
     

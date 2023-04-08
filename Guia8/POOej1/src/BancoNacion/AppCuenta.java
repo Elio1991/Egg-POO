@@ -1,4 +1,5 @@
 /*
+Realizar una clase llamada CuentaBancaria en el paquete Entidades con los siguientes atributos:
 numeroCuenta(entero), dniCliente(entero largo), saldoActual. 
 Agregar constructor vacío, con parámetros, getters y setters.
 Agregar la clase CuentaBancariaServicio en el paquete Servicios que contenga:
@@ -29,19 +30,10 @@ public class AppCuenta {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         CuentaBancariaServicio cbs = new CuentaBancariaServicio();
-        System.out.println("Ingrese su número de cuenta");
-        int numCuenta = leer.nextInt();
-        System.out.println("Ingrese su D.N.I");
-        long dni = leer.nextLong();
-        System.out.println("Ingrese su saldo Actual");
-        double saldo = leer.nextDouble();
+        CuentaBancaria cb = cbs.CrearCuenta();
 
-        CuentaBancaria cb = cbs.CrearCuenta(numCuenta, dni, saldo);
-
-        leer.nextLine();
-        int menu = -1;
+        int menu ;
         do {
-            System.out.println();
             System.out.println();
             System.out.println("Menu");
             System.out.println("1. Ingresar Dinero");
@@ -56,15 +48,15 @@ public class AppCuenta {
             switch (menu) {
                 case 1:
                     System.out.println("Ingrese la cantidad de dinero");
-                    cash = leer.nextInt();
+                    cash = leer.nextFloat();
+                    cbs.Ingresar(cb, (float) cash);
                     System.out.println("Ingreso exitoso!!");
-                    cbs.Ingresar(cb, cash);
                     System.out.println("########################################");
                     break;
                 case 2:
                     System.out.println("Ingrese el importe a retirar");
                     cash = leer.nextInt();
-                    if (cbs.Retirar(cb, cash) == true) {
+                    if (cbs.Retirar(cb, (float) cash) == true) {
                         System.out.println("Retiro exitoso!!");
                     } else {
                         System.out.println("No tiene suficientes fondos, se retirara el máximo disponible");
@@ -77,8 +69,7 @@ public class AppCuenta {
                         System.out.println("Ingrese el importe a retirar");
                         System.out.println("(Solo podrá retirar un 20% de su saldo)");
                         cash = leer.nextDouble();
-                        cbs.ExtraccionRapida(cb, saldo);
-                        if (cbs.ExtraccionRapida(cb, cash) == true) {
+                        if (cbs.ExtraccionRapida(cb, (float) cash)) {
                             System.out.println("retiro exitoso!!");
                             bandera = true;
                         } else {
@@ -98,7 +89,9 @@ public class AppCuenta {
                     System.out.println("########################################");
                     break;
                 default:
-                    System.out.println("Ingrese una opción valida");
+                   if(menu!=0){
+                        System.out.println("Ingrese una opcion válida");
+                   }
             }
         } while (menu != 0);
         System.out.println("Gracias por operar con *AppCuenta*");
