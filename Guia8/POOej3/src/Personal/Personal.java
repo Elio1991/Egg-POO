@@ -45,10 +45,36 @@ public class Personal {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         PersonaServicios ps1 = new PersonaServicios();
+        Persona[] vecpers = new Persona[4];
 
         System.out.println("Bienvenido!");
         System.out.println("###############################");
-        System.out.println("Ingrese los datos de la 1° Persona");
+        for (int i = 0; i < vecpers.length; i++) {
+            System.out.println("Ingrese los datos de la " + (i + 1) + "° persona");
+            vecpers[i] = ps1.crearPersona();
+            switch (ps1.calcularIMC(vecpers[i])) {
+                case -1:
+                    System.out.println("Esta por debajo de su peso");
+                    break;
+                case 0:
+                    System.out.println("Esta en su peso ideal");
+                    break;
+                default:
+                    System.out.println("Esta por encima de su peso");
+                    break;
+            }
+            if (ps1.esMayorDeEdad(vecpers[i])) {
+                System.out.println("Es mayor de edad");
+            } else {
+                System.out.println("Es menor de edad");
+            }
+            System.out.println("#######################################");
+        }
+        ps1.porcentajePeso(vecpers);
+        ps1.porcentajeEdad(vecpers);
+        
+        // Cree un vector para alojar varios objetos y solicitar los datos a traves del bucle "for".
+        /* System.out.println("Ingrese los datos de la 1° Persona");
         System.out.println("----------------------------------");
         Persona p1 = ps1.crearPersona();
         switch (ps1.calcularIMC(p1)) {
@@ -136,6 +162,6 @@ public class Personal {
         
         System.out.println("###############################");
 
-        ps1.porcentajeEdad(p1, p2, p3, p4);
+        ps1.porcentajeEdad(p1, p2, p3, p4);*/
     }
 }

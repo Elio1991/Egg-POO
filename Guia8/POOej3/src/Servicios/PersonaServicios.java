@@ -79,7 +79,57 @@ public class PersonaServicios {
         return imc;
     }
 
-    public void porcentajePeso(Persona p1, Persona p2, Persona p3, Persona p4) {
+    public void porcentajePeso(Persona vecpers[]) {
+        int[] peso = new int[4];
+        int contP1 = 0;
+        int contP2 = 0;
+        int contP3 = 0;
+        for (int i = 0; i < vecpers.length; i++) {
+            peso[i] = calcularIMC(vecpers[i]);
+            switch (peso[i]) {
+                case -1:
+                    contP1++;
+                    break;
+                case 0:
+                    contP2++;
+                    break;
+                default:
+                    contP3++;
+                    break;
+            }
+
+        }
+        int porcBajoPeso = (contP1 * 100) / 4;
+        int porcPesoIdeal = (contP2 * 100) / 4;
+        int porcSobrePeso = (contP3 * 100) / 4;
+
+        System.out.println("Con bajo peso: " + porcBajoPeso + "%");
+        System.out.println("Con peso ideal: " + porcPesoIdeal + "%");
+        System.out.println("Con Sobrepeso: " + porcSobrePeso + "%");
+    }
+
+    public void porcentajeEdad(Persona vecpers[]) {
+        boolean[] edad = new boolean[4];
+        int contE1 = 0;
+        int contE2 = 0;
+
+        for (int i = 0; i < edad.length; i++) {
+            edad[i] = esMayorDeEdad(vecpers[i]);
+            if (edad[i]) {
+                contE1++;
+            } else {
+                contE2++;
+            }
+
+        }
+        int porcMayorEdad = (contE1 * 100) / 4;
+        int porcMenorEdad = (contE2 * 100) / 4;
+        System.out.println("Son Mayores de edad: " + porcMayorEdad + "%");
+        System.out.println("Son Menores de edad: " + porcMenorEdad + "%");
+    }
+    
+    // Este metodo lo hice antes de crear un vector para los objetos, pero era menos eficiente y daba el mismo resultado.
+    /* public void porcentajePeso(Persona p1, Persona p2, Persona p3, Persona p4) {
 
         int[] peso = new int[4];
 
@@ -113,7 +163,8 @@ public class PersonaServicios {
         System.out.println("Con peso ideal: " + porcPesoIdeal + "%");
         System.out.println("Con Sobrepeso: " + porcSobrePeso + "%");
     }
-
+    // Lo mismo para este metodo. No habia aplicado el array para los objetos
+    
     public void porcentajeEdad(Persona p1, Persona p2, Persona p3, Persona p4) {
 
         boolean[] edad = new boolean[4];
@@ -138,6 +189,6 @@ public class PersonaServicios {
         int porcMenorEdad = (contE2 * 100) / 4;
         System.out.println("Son Mayores de edad: " + porcMayorEdad + "%");
         System.out.println("Son Menores de edad: " + porcMenorEdad + "%");
-    }
+    }*/
 
 }
