@@ -22,7 +22,6 @@ public class Operaciones {
         Scanner leer = new Scanner(System.in);
         FraccionService fraccionS = new FraccionService();
         Fraccion f1 = new Fraccion();
-
         int menu;
         System.out.println("Operaciones con fracciones");
         f1 = fraccionS.CrearFracciones();
