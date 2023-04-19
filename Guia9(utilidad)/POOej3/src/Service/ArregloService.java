@@ -19,40 +19,44 @@ import java.util.Arrays;
  * @author Elio
  */
 public class ArregloService {
-      public void inicializarA(double vectorA[]){
-        for (int i = 0; i < vectorA.length; i++) {
-            vectorA[i] = (int) (Math.random()*100);
-        }
- 
-//    Arrays.fill(vectorA, Math.random()*100);
 
+    public void inicializarA(double vectorA[]) {
+        for (int i = 0; i < vectorA.length; i++) {
+            vectorA[i] = (int) (Math.random() * 100);
+        }
+
+//    Arrays.fill(vectorA, Math.random()*100);
     }
-    
-    public void mostrar(double vectorA[]){
+
+    public void mostrar(double vectorA[]) {
         for (int i = 0; i < vectorA.length; i++) {
             System.out.print("[" + vectorA[i] + "]");
         }
         System.out.println();
-//      
     }
-    
-    public void ordenar(double vectorA[]){
-    Arrays.sort(vectorA);
-    double[] vectorX = new double[50];
-    
+
+    /* este metodo reemplaza al for, para mostrar el vector 
+        public void Mostrar(double vectorA[]){
+    Arrays.toString(vectorA);
+    }*/
+
+    public void ordenar(double vectorA[]) {
+        Arrays.sort(vectorA);
+        double[] vectorX = new double[50];
+
 //        for (int i = vectorA.length-1; i >= 0; i--) {
 //            vectorX[i] = vectorA[i];
 //            System.out.print("[" + vectorA[i] + "]");
 //        }
-        for (int i = 0; i < vectorA.length/2; i++) {
+        for (int i = 0; i < vectorA.length / 2; i++) {
             double aux = vectorA[i];
-            vectorA[i] = vectorA[vectorA.length-1-i];
-            vectorA[vectorA.length-1-i] = aux;
+            vectorA[i] = vectorA[vectorA.length - 1 - i];
+            vectorA[vectorA.length - 1 - i] = aux;
         }
     }
-    
-    public void inicializarB(double vectorB[], double vectorA[]){
-    System.arraycopy(vectorA, 0, vectorB, 0, 9);
-    Arrays.fill(vectorB, 10 , vectorB.length , 0.5);
+
+    public void inicializarB(double vectorB[], double vectorA[]) {
+        System.arraycopy(vectorA, 0, vectorB, 0, 9);
+        Arrays.fill(vectorB, 10, vectorB.length, 0.5);
     }
 }
