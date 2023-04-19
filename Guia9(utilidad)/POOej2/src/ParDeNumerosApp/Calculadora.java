@@ -27,12 +27,12 @@ public class Calculadora {
      */
     public static void main(String[] args) {
         ParDeNumerosService spdn = new ParDeNumerosService();
-       
-       ParDeNumeros numero = spdn.crearNumeros();
-       spdn.mostrarValores(numero);
-       System.out.println(spdn.devolverMayor(numero));
-       spdn.calcularPotencia(numero);
-       spdn.calculaRaiz(numero);
+        ParDeNumeros numero = spdn.crearNumeros();
+        
+        spdn.mostrarValores(numero);
+        System.out.println(spdn.devolverMayor(numero));
+        spdn.calcularPotencia(numero);
+        spdn.calculaRaiz(numero);
     }
-    
+
 }

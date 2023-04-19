@@ -20,7 +20,7 @@ package Entidades;
  */
 public class ParDeNumeros {
 
-    double num1, num2;
+   private double num1, num2;
 
     public ParDeNumeros() {
         this.num1 = Math.random() * 10;
