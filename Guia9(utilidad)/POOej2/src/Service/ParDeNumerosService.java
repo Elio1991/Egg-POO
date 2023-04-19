@@ -31,8 +31,8 @@ public class ParDeNumerosService {
     }
     
     public double devolverMayor(ParDeNumeros num){
-        double mayor;
-        return mayor = Math.max(num.getNum1(), num.getNum2());
+        double mayor = Math.max(num.getNum1(), num.getNum2());
+        return mayor;
         
     }
     
