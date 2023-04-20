@@ -30,7 +30,7 @@ public class ParDeNumerosService {
         System.out.println("Numero 2: " + num.getNum2());
     }
     
-    public double devolverMayor(ParDeNumeros num){
+    public static double devolverMayor(ParDeNumeros num){
         double mayor = Math.max(num.getNum1(), num.getNum2());
         return mayor;
         
