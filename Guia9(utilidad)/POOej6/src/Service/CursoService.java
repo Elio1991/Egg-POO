@@ -60,8 +60,7 @@ public class CursoService {
     }
     
     public int calcularGananciaSemanal(Curso Curso1){
-    int cont = cargarAlumnos().length;
- return Curso1.getCantidadHorasPorDia()*Curso1.getPrecioPorHora()*Curso1.getCantidadDiasPorSemana()*cont;
+    return Curso1.getCantidadHorasPorDia()*Curso1.getPrecioPorHora()*Curso1.getCantidadDiasPorSemana()*5;
     }
     
     
