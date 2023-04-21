@@ -22,23 +22,25 @@ la cantidad de alumnos y la cantidad de días a la semana que se repite el encue
  */
 package Entidad;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Elio
  */
 public class Curso {
-    
+
     private String nombreCurso;
     private int cantidadHorasPorDia;
     private int cantidadDiasPorSemana;
     private String turnoMañanaOTarde;
-    private float precioPorHora;
+    private int precioPorHora;
     private String[] alumnos;
 
     public Curso() {
     }
 
-    public Curso(String nombreCurso, int cantidadHorasPorDia, int cantidadDiasPorSemana, String turnoMañanaOTarde, float precioPorHora, String[] alumnos) {
+    public Curso(String nombreCurso, int cantidadHorasPorDia, int cantidadDiasPorSemana, String turnoMañanaOTarde, int precioPorHora, String[] alumnos) {
         this.nombreCurso = nombreCurso;
         this.cantidadHorasPorDia = cantidadHorasPorDia;
         this.cantidadDiasPorSemana = cantidadDiasPorSemana;
@@ -79,11 +81,11 @@ public class Curso {
         this.turnoMañanaOTarde = turnoMañanaOTarde;
     }
 
-    public float getPrecioPorHora() {
+    public int getPrecioPorHora() {
         return precioPorHora;
     }
 
-    public void setPrecioPorHora(float precioPorHora) {
+    public void setPrecioPorHora(int precioPorHora) {
         this.precioPorHora = precioPorHora;
     }
 
@@ -94,8 +96,15 @@ public class Curso {
     public void setAlumnos(String[] alumnos) {
         this.alumnos = alumnos;
     }
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return    " Nombre del Curso: " + nombreCurso + "\n"
+                + " Cantidad horas por dia: " + cantidadHorasPorDia + "\n"
+                + " Cantidad dias por semana: " + cantidadDiasPorSemana + "\n"
+                + " Turno Mañana O Tarde: " + turnoMañanaOTarde + "\n"
+                + " Precio por hora: " + precioPorHora + "\n"
+                + " Alumnos" + Arrays.toString(alumnos) + '}';
+    }
+
 }

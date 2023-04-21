@@ -19,50 +19,25 @@ Método calcularGananciaSemanal(): este método se encarga de calcular la gananc
 Para ello, se deben multiplicar la cantidad de horas por día, el precio por hora, 
 la cantidad de alumnos y la cantidad de días a la semana que se repite el encuentro.
  */
-package Service;
+package Cursos;
 
 import Entidad.Curso;
-import java.util.Arrays;
-import java.util.Scanner;
+import Service.CursoService;
 
 /**
  *
  * @author Elio
  */
-public class CursoService {
+public class Cursadas {
 
-    Scanner leer = new Scanner(System.in).useDelimiter("\n");
-
-    public String[] cargarAlumnos() {
-        String[] alumnos = new String[5];
-        
-        for (int i = 0; i < alumnos.length; i++) {
-            System.out.println("Ingrese el nombre del alumno: " + (i + 1));
-            alumnos[i] = leer.next();
-        }
-        return alumnos;
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        CursoService Cs = new CursoService();
+        Curso Curso1 = Cs.crearCurso();
+        System.out.println(Curso1.toString());
+        System.out.println(" Ganancia semanal: $" + Cs.calcularGananciaSemanal(Curso1));
     }
 
-    public Curso crearCurso() {
-        Curso curso1 = new Curso();
-        System.out.println("Ingrese el nombre del curso");
-        curso1.setNombreCurso(leer.nextLine());
-        System.out.println("Ingrese la cantidad de horas por dia");
-        curso1.setCantidadHorasPorDia(leer.nextInt());
-        System.out.println("Ingrese la cantidad de dias por semana");
-        curso1.setCantidadDiasPorSemana(leer.nextInt());
-        System.out.println("Ingrese el turno,(mañana o tarde)");
-        curso1.setTurnoMañanaOTarde(leer.next());
-        System.out.println("Ingrese el precio por hora:");
-        curso1.setPrecioPorHora(leer.nextInt());
-        curso1.setAlumnos(cargarAlumnos());
-        return curso1;
-    }
-    
-    public int calcularGananciaSemanal(Curso Curso1){
-    
- return Curso1.getCantidadHorasPorDia()*Curso1.getPrecioPorHora()*Curso1.getCantidadDiasPorSemana()*5;
-    }
-    
-    
 }
