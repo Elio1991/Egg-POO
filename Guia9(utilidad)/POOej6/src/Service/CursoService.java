@@ -22,7 +22,7 @@ la cantidad de alumnos y la cantidad de días a la semana que se repite el encue
 package Service;
 
 import Entidad.Curso;
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 /**
@@ -60,8 +60,8 @@ public class CursoService {
     }
     
     public int calcularGananciaSemanal(Curso Curso1){
-    
- return Curso1.getCantidadHorasPorDia()*Curso1.getPrecioPorHora()*Curso1.getCantidadDiasPorSemana()*5;
+    int cont = cargarAlumnos().length;
+ return Curso1.getCantidadHorasPorDia()*Curso1.getPrecioPorHora()*Curso1.getCantidadDiasPorSemana()*cont;
     }
     
     
